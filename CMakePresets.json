@@ -1,0 +1,29 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "default",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_MAKE_PROGRAM": "ninja"
+            },
+            "generator": "Ninja"
+        },
+        {
+            "name": "debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "LLVM_INSTALL_PREFIX": "$env{LLVM_INSTALL_PREFIX}"
+            },
+            "inherits": "default"
+        },
+        {
+            "name": "release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "LLVM_INSTALL_PREFIX": "$env{LLVM_INSTALL_PREFIX}"
+            },
+            "inherits": "default"
+        }
+    ]
+}
